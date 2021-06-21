@@ -3,9 +3,11 @@ import { useRouter } from "next/router";
 const PortfolioProjectPage = () => {
     const router = useRouter();
 
+    const { id } = router.query;
+
     return (
         <div>
-            <h1>The Portfolio Project Page</h1>
+            <h1>The Portfolio Project Page {id}</h1>
         </div>
     );
 };
