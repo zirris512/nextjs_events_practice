@@ -1,8 +1,10 @@
 import { useRouter } from "next/router";
+
 import { getEventById } from "../../dummy-data";
 import EventSummary from "../../components/event-detail/event-summary";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
+import ErrorAlert from "../../components/ui/error-alert";
 
 const SingleEventPage = () => {
     const router = useRouter();
@@ -12,7 +14,9 @@ const SingleEventPage = () => {
     if (!event) {
         return (
             <div>
-                <h1>No Event Found</h1>
+                <ErrorAlert>
+                    <p>No Event Found</p>
+                </ErrorAlert>
             </div>
         );
     }
